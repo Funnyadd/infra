@@ -3,5 +3,4 @@ kind: Kustomization
 namespace: prod
 resources:
   - namespace.yaml
-  - ../../apps/metrics-stack/overlays/prod
-  # - ../../apps/<next-app>/overlays/prod
+  - ../../apps/log680/overlays/prod
