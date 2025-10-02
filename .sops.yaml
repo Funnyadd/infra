@@ -1,0 +1,3 @@
+creation_rules:
+  - path_regex: k8s/.*/secrets/.*\.ya?ml
+    age: ["age1ng7svucv0gjna8xu8v53krpfm0ekpyxqph8lsf2l2gss2j4kaevs57jwxs"]

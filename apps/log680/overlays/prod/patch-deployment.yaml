@@ -9,6 +9,10 @@ spec:
         - name: metrics
           image: docker.io/funnyadd/metrics-a25-grp1-eq10:prod-00000000000000-deadbee
           # {"$imagepolicy": "flux-system:metrics-staging"}
+          envFrom:
+            - secretRef: { name: app-secrets }
         - name: mobilitysoft
           image: docker.io/funnyadd/mobilitysoft:prod-00000000000000-deadbee
           # {"$imagepolicy": "flux-system:mobilitysoft-staging"}
+          envFrom:
+            - secretRef: { name: app-secrets }

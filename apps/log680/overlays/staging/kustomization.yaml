@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: staging
 resources:
   - ../../base
+  - secrets
 patches:
-  - path: patch-images.yaml
+  - path: patch-deployment.yaml
   - path: patch-ingress.yaml
