@@ -2,11 +2,10 @@ apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImagePolicy
 metadata: { name: metrics-staging, namespace: flux-system }
 spec:
-  # imageRepositoryRef: { name: metrics }
+  imageRepositoryRef: { name: metrics }
   filterTags:
-    pattern: '.*'
-    # pattern: '^staging-(?P<ts>\\d{8}-\\d{6})-[0-9a-f]{7,40}$'
-    # extract: '$ts'
+    pattern: '^staging-(?P<ts>\\d{8}-\\d{6})-[0-9a-f]{7,40}$'
+    extract: '$ts'
   policy:
     numerical: { order: asc }
 ---
