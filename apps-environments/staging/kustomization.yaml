@@ -3,5 +3,4 @@ kind: Kustomization
 namespace: staging
 resources:
   - namespace.yaml
-  - ../../apps/metrics-stack/overlays/staging
-  # - ../../apps/<next-app>/overlays/staging
+  - ../../apps/log680/overlays/staging
