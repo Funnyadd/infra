@@ -4,10 +4,10 @@ metadata: { name: metrics-prod, namespace: flux-system }
 spec:
   imageRepositoryRef: { name: metrics }
   filterTags:
-    pattern: '^prod-(?P<ts>\d{14})-[0-9a-f]{7,40}$'
-    extract: '$ts'
+    pattern: '^prod$'
   policy:
     numerical: { order: asc }
+     digestReflectionPolicy: Always
 ---
 # apiVersion: image.toolkit.fluxcd.io/v1
 # kind: ImagePolicy
@@ -15,7 +15,7 @@ spec:
 # spec:
 #   imageRepositoryRef: { name: mobilitysoft }
 #   filterTags:
-#     pattern: '^prod-(?P<ts>\d{14})-[0-9a-f]{7,40}$'
-#     extract: '$ts'
+#     pattern: '^prod$'
 #   policy:
 #     numerical: { order: asc }
+#      digestReflectionPolicy: Always
