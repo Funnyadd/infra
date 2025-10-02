@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metrics
+spec:
+  template:
+    spec:
+      containers:
+        - name: metrics
+          image: funnyadd/metrics-a25-grp1-eq10:pr-$(PR_NUMBER)
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mobilitysoft
+spec:
+  template:
+    spec:
+      containers:
+        - name: mobilitysoft
+          image: funnyadd/mobilitysoft-eq10:pr-$(PR_NUMBER)

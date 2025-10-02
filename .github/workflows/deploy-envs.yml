@@ -1,0 +1,68 @@
+name: Deploy Envs
+
+on:
+  push:
+    branches: [ main, staging ]
+  push:
+    tags: [ "v*" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup tools
+        run: |
+          curl -L https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.2/kustomize_v5.4.2_linux_amd64.tar.gz | tar xz -C /usr/local/bin
+          curl -LO https://dl.k8s.io/release/v1.30.3/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+
+      - name: Kubeconfig
+        run: echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 -d > $HOME/.kube/config
+
+      - name: Select env
+        id: envsel
+        run: |
+          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
+            echo "ns=dev" >> $GITHUB_OUTPUT
+            echo "overlay=k8s/overlays/dev" >> $GITHUB_OUTPUT
+          elif [[ "${GITHUB_REF_NAME}" == "staging" ]]; then
+            echo "ns=staging" >> $GITHUB_OUTPUT
+            echo "overlay=k8s/overlays/staging" >> $GITHUB_OUTPUT
+          else
+            echo "ns=prod" >> $GITHUB_OUTPUT
+            echo "overlay=k8s/overlays/prod" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Ensure namespace
+        run: kubectl get ns ${{ steps.envsel.outputs.ns }} || kubectl create ns ${{ steps.envsel.outputs.ns }}
+
+      - name: Upsert secrets
+        run: |
+          NS=${{ steps.envsel.outputs.ns }}
+          # choose values from env-scoped secrets
+          pick() { case "$NS" in dev) echo "${!1_DEV}";; staging) echo "${!1_STAGING}";; prod) echo "${!1_PROD}";; esac; }
+          DB_URL=$(pick DB_URL); JWT_SECRET=$(pick JWT_SECRET); REDIS_PASSWORD=$(pick REDIS_PASSWORD); API_BASE_URL=$(pick API_BASE_URL)
+          kubectl create secret generic app-secrets -n "$NS" \
+            --from-literal=DB_URL="$DB_URL" \
+            --from-literal=JWT_SECRET="$JWT_SECRET" \
+            --from-literal=REDIS_PASSWORD="$REDIS_PASSWORD" \
+            --from-literal=API_BASE_URL="$API_BASE_URL" \
+            --dry-run=client -o yaml | kubectl apply -f -
+
+        env:
+          DB_URL_DEV:       ${{ secrets.DB_URL_DEV }}
+          DB_URL_STAGING:   ${{ secrets.DB_URL_STAGING }}
+          DB_URL_PROD:      ${{ secrets.DB_URL_PROD }}
+          JWT_SECRET_DEV:   ${{ secrets.JWT_SECRET_DEV }}
+          JWT_SECRET_STAGING:${{ secrets.JWT_SECRET_STAGING }}
+          JWT_SECRET_PROD:  ${{ secrets.JWT_SECRET_PROD }}
+          REDIS_PASSWORD_DEV:    ${{ secrets.REDIS_PASSWORD_DEV }}
+          REDIS_PASSWORD_STAGING:${{ secrets.REDIS_PASSWORD_STAGING }}
+          REDIS_PASSWORD_PROD:   ${{ secrets.REDIS_PASSWORD_PROD }}
+          API_BASE_URL_DEV:      ${{ secrets.API_BASE_URL_DEV }}
+          API_BASE_URL_STAGING:  ${{ secrets.API_BASE_URL_STAGING }}
+          API_BASE_URL_PROD:     ${{ secrets.API_BASE_URL_PROD }}
+
+      - name: Deploy
+        run: kustomize build ${{ steps.envsel.outputs.overlay }} | kubectl apply -n ${{ steps.envsel.outputs.ns }} -f -

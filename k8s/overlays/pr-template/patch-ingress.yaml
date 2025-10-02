@@ -1,0 +1,7 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: log680
+spec:
+  rules:
+    - host: pr-$(PR_NUMBER)-log680.home.adammihajlovic.ca

@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: pr-$(PR_NUMBER)
+resources:
+  - ../../base
+patchesStrategicMerge:
+  - patch-images.yaml
+  - patch-ingress.yaml
+  - patch-secrets.yaml
+configMapGenerator:
+  - name: app-config
+    literals:
+      - APP_ENV=pr-$(PR_NUMBER)
+generatorOptions:
+  disableNameSuffixHash: true
