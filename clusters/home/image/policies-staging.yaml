@@ -7,7 +7,7 @@ spec:
     pattern: '^staging-(?P<ts>\d{8}-\d{6})-[a-f0-9]{7}$'
     extract: '$ts'
   policy:
-    numerical: { order: asc }
+    alphabetical: { order: asc }
 ---
 # apiVersion: image.toolkit.fluxcd.io/v1
 # kind: ImagePolicy
@@ -19,4 +19,4 @@ spec:
 #     pattern: '^staging-(?P<ts>\d{8}-\d{6})-[a-f0-9]{7}$'
 #     extract: '$ts'
 #   policy:
-#     numerical: { order: asc }
+#     alphabetical: { order: asc }
