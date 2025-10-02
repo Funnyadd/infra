@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: prod
 resources:
   - ../../base
-  - secrets
+  - ./secrets/app-secrets.yaml
 patches:
   - path: patch-deployment.yaml
   - path: patch-ingress.yaml

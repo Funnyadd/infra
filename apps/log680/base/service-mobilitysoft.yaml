@@ -7,4 +7,3 @@ spec:
   ports:
     - name: http
       port: 5002
-      targetPort: http-mobilitysoft
