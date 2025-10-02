@@ -9,13 +9,13 @@ spec:
   policy:
     numerical: { order: asc }
 ---
-apiVersion: image.toolkit.fluxcd.io/v1
-kind: ImagePolicy
-metadata: { name: mobilitysoft-staging, namespace: flux-system }
-spec:
-  imageRepositoryRef: { name: mobilitysoft }
-  filterTags:
-    pattern: '^staging-(?P<ts>\d{14})-[0-9a-f]{7,40}$'
-    extract: '$ts'
-  policy:
-    numerical: { order: asc }
+# apiVersion: image.toolkit.fluxcd.io/v1
+# kind: ImagePolicy
+# metadata: { name: mobilitysoft-staging, namespace: flux-system }
+# spec:
+#   imageRepositoryRef: { name: mobilitysoft }
+#   filterTags:
+#     pattern: '^staging-(?P<ts>\d{14})-[0-9a-f]{7,40}$'
+#     extract: '$ts'
+#   policy:
+#     numerical: { order: asc }

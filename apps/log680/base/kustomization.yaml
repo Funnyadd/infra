@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - deployment.yaml
   - service-metrics.yaml
-  - service-mobilitysoft.yaml
+  # - service-mobilitysoft.yaml
