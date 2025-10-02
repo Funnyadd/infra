@@ -4,7 +4,7 @@ metadata: { name: metrics-staging, namespace: flux-system }
 spec:
   imageRepositoryRef: { name: metrics }
   filterTags:
-    pattern: '^staging-(?P<ts>\\d{8}-\\d{6})-[0-9a-f]{7,40}$'
+    pattern: '^staging-(?P<ts>\d{8}-\d{6})-[a-f0-9]{7}$'
     extract: '$ts'
   policy:
     numerical: { order: asc }
@@ -16,7 +16,7 @@ spec:
 #   imageRepositoryRef: { name: mobilitysoft }
 #   filterTags:
 # filterTags:
-#     pattern: '^staging-(?P<ts>\\d{8}-\\d{6})-[0-9a-f]{7,40}$'
+#     pattern: '^staging-(?P<ts>\d{8}-\d{6})-[a-f0-9]{7}$'
 #     extract: '$ts'
 #   policy:
 #     numerical: { order: asc }
