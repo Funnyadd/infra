@@ -6,7 +6,7 @@ metadata:
 spec:
   targetNamespace: prod
   interval: 1m
-  path: ../../apps-environments/prod
+  path: ./apps-environments/prod
   prune: true
   sourceRef:
     kind: GitRepository
