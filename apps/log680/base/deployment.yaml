@@ -4,6 +4,9 @@ metadata:
   name: log680
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: log680
   template:
     spec:
       containers:
