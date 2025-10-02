@@ -1,0 +1,9 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata: { name: prod, namespace: flux-system }
+spec:
+  targetNamespace: prod
+  interval: 1m
+  path: ./apps-environments/prod
+  prune: true
+  sourceRef: { kind: GitRepository, name: flux-system }

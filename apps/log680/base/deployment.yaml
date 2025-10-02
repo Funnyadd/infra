@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log680
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: log680 }
+  template:
+    metadata:
+      labels: { app: log680 }
+    spec:
+      containers:
+        - name: metrics
+          image: docker.io/funnyadd/metrics-a25-grp1-eq10:DEBUG
+          ports: [{ name: http-metrics, containerPort: 5001 }]
+          # envFrom:
+          #   - secretRef: { name: app-secrets }  # OPTIONAL: if you inject secrets per env
+        - name: mobilitysoft
+          image: docker.io/funnyadd/mobilitysoft:DEBUG
+          ports: [{ name: http-mobilitysoft, containerPort: 5002 }]
+          # envFrom:
+          #   - secretRef: { name: app-secrets }
