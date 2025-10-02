@@ -7,7 +7,7 @@ spec:
     pattern: '^staging$'
   policy:
     numerical: { order: asc }
-     digestReflectionPolicy: Always
+  digestReflectionPolicy: Always
 ---
 # apiVersion: image.toolkit.fluxcd.io/v1
 # kind: ImagePolicy
