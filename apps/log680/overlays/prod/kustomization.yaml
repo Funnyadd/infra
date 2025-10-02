@@ -4,6 +4,6 @@ namespace: prod
 resources:
   - ../../base
   - ./secrets/app-secrets.yaml
+  - ingress.yaml
 patches:
   - path: patch-deployment.yaml
-  - path: patch-ingress.yaml
