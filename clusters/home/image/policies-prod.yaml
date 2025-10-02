@@ -4,7 +4,7 @@ metadata: { name: metrics-prod, namespace: flux-system }
 spec:
   imageRepositoryRef: { name: metrics }
   filterTags:
-    pattern: '^prod-(?P<ts>\\d{8}-\\d{6})-[0-9a-f]{7,40}$'
+    pattern: '^prod-(?P<ts>\d{8}-\d{6})-[a-f0-9]{7}$'
     extract: '$ts'
   policy:
     numerical: { order: asc }
@@ -15,7 +15,7 @@ spec:
 # spec:
 #   imageRepositoryRef: { name: mobilitysoft }
 #   filterTags:
-#     pattern: '^prod-(?P<ts>\\d{8}-\\d{6})-[0-9a-f]{7,40}$'
+#     pattern: '^prod-(?P<ts>\d{8}-\d{6})-[a-f0-9]{7}$'
 #     extract: '$ts'
 #   policy:
 #     numerical: { order: asc }
