@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: log680
+  labels:
+    app: log680
 spec:
   replicas: 1
   selector:
@@ -15,6 +17,7 @@ spec:
       containers:
         - name: metrics
           image: docker.io/funnyadd/metrics-a25-grp1-eq10:DEBUG
+          imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: 5001
