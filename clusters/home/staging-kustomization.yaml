@@ -4,10 +4,13 @@ metadata:
   name: staging
   namespace: flux-system
 spec:
-  targetNamespace: staging
   interval: 1m
-  path: ./apps-environments/staging
   prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system
+  path: ./apps-environments/staging
+  targetNamespace: staging
+  dependsOn:
+    - name: namespaces
