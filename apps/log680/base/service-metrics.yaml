@@ -3,7 +3,9 @@ kind: Service
 metadata:
   name: metrics
 spec:
-  selector: { app: log680 }
+  selector:
+    app: log680
   ports:
     - name: http
       port: 5001
+      targetPort: http

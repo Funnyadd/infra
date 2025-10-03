@@ -15,10 +15,3 @@ spec:
                 name: metrics
                 port:
                   number: 5001
-    # - host: staging-mobilitysoft-api.home.adammihajlovic.ca
-    #   http:
-    #     paths:
-    #       - path: /
-    #         pathType: Prefix
-    #         backend:
-    #           service: { name: mobilitysoft, port: { number: 5002 } }
