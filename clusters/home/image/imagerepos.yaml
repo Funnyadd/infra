@@ -1,10 +1,12 @@
-apiVersion: image.toolkit.fluxcd.io/v1
+apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImageRepository
-metadata: { name: metrics, namespace: flux-system }
+metadata:
+  name: metrics
+  namespace: flux-system
 spec:
-  image: docker.io/funnyadd/metrics-a25-grp1-eq10
   interval: 1m
----
+  image: docker.io/funnyadd/metrics-a25-grp1-eq10
+# ---
 # apiVersion: image.toolkit.fluxcd.io/v1
 # kind: ImageRepository
 # metadata: { name: mobilitysoft, namespace: flux-system }
