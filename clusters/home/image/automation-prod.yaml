@@ -20,5 +20,5 @@ spec:
     push:
       branch: main
   update:
-    path: ./apps/overlays/prod/patch-deployment.yaml
+    path: ./apps/log680/overlays/prod/patch-deployment.yaml
     strategy: Setters
