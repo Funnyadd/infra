@@ -9,7 +9,9 @@ spec:
 # ---
 # apiVersion: image.toolkit.fluxcd.io/v1
 # kind: ImageRepository
-# metadata: { name: mobilitysoft, namespace: flux-system }
+# metadata:
+#   name: mobilitysoft
+#   namespace: flux-system
 # spec:
 #   image: docker.io/funnyadd/mobilitysoft-eq10
 #   interval: 1m
