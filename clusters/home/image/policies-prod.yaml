@@ -12,18 +12,18 @@ spec:
   policy:
     alphabetical:
       order: asc
-# ---
-# apiVersion: image.toolkit.fluxcd.io/v1
-# kind: ImagePolicy
-# metadata:
-#   name: mobilitysoft-prod
-#   namespace: flux-system
-# spec:
-#   imageRepositoryRef:
-#     name: mobilitysoft
-#   filterTags:
-#     pattern: '^prod-(?P<ts>\d{8}-\d{6})-[a-f0-9]{7}$'
-#     extract: '$ts'
-#   policy:
-#     alphabetical:
-#       order: asc
+---
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImagePolicy
+metadata:
+  name: mobilitysoft-prod
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: mobilitysoft
+  filterTags:
+    pattern: '^prod-(?P<ts>\d{8}-\d{6})-[a-f0-9]{7}$'
+    extract: '$ts'
+  policy:
+    alphabetical:
+      order: asc
