@@ -22,7 +22,6 @@ spec:
   imageRepositoryRef:
     name: mobilitysoft
   filterTags:
-filterTags:
     pattern: '^staging-(?P<ts>\d{8}-\d{6})-[a-f0-9]{7}$'
     extract: '$ts'
   policy:
