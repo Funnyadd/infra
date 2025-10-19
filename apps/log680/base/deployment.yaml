@@ -21,7 +21,7 @@ spec:
           envFrom:
             - secretRef:
                 name: app-secrets
-        - name: mobilisoft
+        - name: mobilitysoft
           image: docker.io/funnyadd/mobilitysoft-eq10:DEBUG
           ports:
             - name: http
