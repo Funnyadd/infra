@@ -7,6 +7,6 @@ spec:
     spec:
       containers:
         - name: metrics
-          image: docker.io/funnyadd/metrics-a25-grp1-eq10:staging-20251029-142340-3836b0d # {"$imagepolicy": "flux-system:metrics-staging"}
+          image: docker.io/funnyadd/metrics-a25-grp1-eq10:staging-20251102-161616-cb147ce # {"$imagepolicy": "flux-system:metrics-staging"}
         - name: mobilitysoft
           image: docker.io/funnyadd/mobilitysoft-eq10:staging-20251102-152635-cd4caf2 # {"$imagepolicy": "flux-system:mobilitysoft-staging"}
