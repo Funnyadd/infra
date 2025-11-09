@@ -5,3 +5,5 @@ resources:
   - namespaces-kustomization.yaml
   - prod-kustomization.yaml
   - staging-kustomization.yaml
+  - image/automation-prod.yaml
+  - image/automation-staging.yaml

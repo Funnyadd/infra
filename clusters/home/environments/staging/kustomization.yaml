@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
   - ../../../../apps/metrics/overlays/staging
   - ../../../../apps/mobilitysoft/overlays/staging
-  - image-automation.yaml
