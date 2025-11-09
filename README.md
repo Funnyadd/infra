@@ -19,15 +19,13 @@ infra/
         ├── namespaces/      # Namespace definitions (prod/staging)
         ├── environments/    # Each environment composition
         │   ├── staging/
-        │   │   ├── kustomization.yaml
-        │   │   └── image/ (ImagePolicies per env)
+        │   │   └── kustomization.yaml
         │   └── prod/
-        │       ├── kustomization.yaml
-        │       └── image/
-        ├── image/           # Centralized ImageRepository + Automation
+        │       └── kustomization.yaml
+        ├── image/           # Image Automation
         │   ├── automation-staging.yaml
         │   ├── automation-prod.yaml
-        │   └── repo-*.yaml
+        ├── namespaces-kustomization.yaml
         ├── staging-kustomization.yaml
         ├── prod-kustomization.yaml
         └── kustomization.yaml
@@ -145,7 +143,3 @@ flux get image repository -A
 flux get image policy -A
 flux get image update -A
 ```
-
----
-
-**FunnyServer Infra** — declarative, self-healing, and Flux-driven
