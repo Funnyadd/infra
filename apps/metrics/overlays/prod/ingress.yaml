@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: metrics
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: metrics-api.home.adammihajlovic.ca
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: metrics
+                port:
+                  number: 5001

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metrics
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: metrics
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: metrics
+    spec:
+      containers:
+        - name: metrics
+          image: docker.io/funnyadd/metrics-a25-grp1-eq10:DEBUG
+          ports:
+            - name: http
+              containerPort: 5001
+          envFrom:
+            - secretRef:
+                name: app-secrets

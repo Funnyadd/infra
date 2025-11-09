@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: mobilitysoft-staging
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: mobilitysoft
+  filterTags:
+    pattern: '^staging-(?P<ts>\d{8}-\d{6})-[a-f0-9]{7}$'
+    extract: '$ts'
+  policy:
+    alphabetical:
+      order: asc

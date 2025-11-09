@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mobilitysoft
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: staging-mobilitysoft.home.adammihajlovic.ca
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mobilitysoft
+                port:
+                  number: 5002

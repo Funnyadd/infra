@@ -10,7 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./apps-environments/prod
+  path: ./clusters/home/environments/prod
   targetNamespace: prod
   dependsOn:
     - name: namespaces

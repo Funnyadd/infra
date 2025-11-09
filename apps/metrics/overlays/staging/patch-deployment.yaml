@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metrics
+spec:
+  template:
+    spec:
+      containers:
+        - name: metrics
+          image: docker.io/funnyadd/metrics-a25-grp1-eq10:staging-20250101-000000-abcdef0 # {"$imagepolicy": "flux-system:metrics-staging"}
