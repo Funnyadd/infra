@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: mobilitysoft
-          image: docker.io/funnyadd/mobilitysoft-eq10:prod-20250101-000000-abcdef0 # {"$imagepolicy": "flux-system:mobilitysoft-prod"}
+          image: docker.io/funnyadd/mobilitysoft-eq10:prod-20251103-220930-91dc7e3 # {"$imagepolicy": "flux-system:mobilitysoft-prod"}
