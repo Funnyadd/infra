@@ -20,4 +20,4 @@ spec:
               containerPort: 5001
           envFrom:
             - secretRef:
-                name: app-secrets
+                name: metrics-app-secrets

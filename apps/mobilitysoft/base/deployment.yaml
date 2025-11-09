@@ -20,4 +20,4 @@ spec:
               containerPort: 5002
           envFrom:
             - secretRef:
-                name: app-secrets
+                name: mobilitysoft-app-secrets
