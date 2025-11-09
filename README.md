@@ -40,13 +40,13 @@ infra/
 ### When manifests were changed in Git
 ```bash
 # Reconcile the environments (forces Flux to reapply manifests)
-flux reconcile kustomization env-prod -n flux-system --with-source
-flux reconcile kustomization env-staging -n flux-system --with-source
+flux reconcile kustomization prod -n flux-system --with-source
+flux reconcile kustomization staging -n flux-system --with-source
 
 # Check reconciliation and resource health
 flux get kustomizations -A
-flux tree kustomization env-prod -n flux-system
-flux tree kustomization env-staging -n flux-system
+flux tree kustomization prod -n flux-system
+flux tree kustomization staging -n flux-system
 ```
 
 ---
@@ -104,8 +104,8 @@ flux reconcile imageupdateautomation automation-prod -n flux-system
 flux reconcile imageupdateautomation automation-staging -n flux-system
 
 # Apply the new commit to the cluster
-flux reconcile kustomization env-prod -n flux-system --with-source
-flux reconcile kustomization env-staging -n flux-system --with-source
+flux reconcile kustomization prod -n flux-system --with-source
+flux reconcile kustomization staging -n flux-system --with-source
 ```
 
 ---
