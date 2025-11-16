@@ -20,13 +20,3 @@ spec:
                 port:
                   number: 5001
                   spec:
-    - host: staging-log680.home.adammihajlovic.ca
-      http:
-        paths:
-          - path: /docs
-            pathType: Prefix
-            backend:
-              service:
-                name: metrics
-                port:
-                  number: 5001
