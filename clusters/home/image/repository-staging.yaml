@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: infra-staging
+  namespace: staging
+spec:
+  interval: 1m
+  url: https://github.com/funnyadd/infra
+  ref:
+    branch: main

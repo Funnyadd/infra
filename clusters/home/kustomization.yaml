@@ -6,4 +6,6 @@ resources:
   - prod-kustomization.yaml
   - staging-kustomization.yaml
   - image/automation-prod.yaml
+  - image/repository-prod.yaml
   - image/automation-staging.yaml
+  - image/repository-staging.yaml
