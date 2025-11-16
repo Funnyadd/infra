@@ -22,9 +22,12 @@ infra/
         │   │   └── kustomization.yaml
         │   └── prod/
         │       └── kustomization.yaml
-        ├── image/           # Image Automation
-        │   ├── automation-staging.yaml
-        │   ├── automation-prod.yaml
+        ├── image/           # For Container images (automation + policy + repository definitions)
+        │   ├── automation.yaml
+        │   ├── metrics-policies.yaml
+        │   ├── metrics-repository.yaml
+        │   ├── mobilitysoft-policies.yaml
+        │   └── mobilitysoft-repository.yaml
         ├── namespaces-kustomization.yaml
         ├── staging-kustomization.yaml
         ├── prod-kustomization.yaml
@@ -98,8 +101,7 @@ flux reconcile imagepolicy metrics-staging -n flux-system
 flux reconcile imagepolicy mobilitysoft-staging -n flux-system
 
 # Trigger automation to commit new tags
-flux reconcile imageupdateautomation automation-prod -n flux-system
-flux reconcile imageupdateautomation automation-staging -n flux-system
+flux reconcile imageupdateautomation automation -n flux-system
 
 # Apply the new commit to the cluster
 flux reconcile kustomization prod -n flux-system --with-source
