@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: metrics
-          image: docker.io/funnyadd/metrics-a25-grp1-eq10:staging-20251115-211205-3d34779 # {"$imagepolicy": "flux-system:metrics-staging"}
+          image: docker.io/funnyadd/metrics-a25-grp1-eq10:staging-20251115-230933-4885391 # {"$imagepolicy": "flux-system:metrics-staging"}
