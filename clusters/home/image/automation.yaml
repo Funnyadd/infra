@@ -1,13 +1,13 @@
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageUpdateAutomation
 metadata:
-  name: overlays-staging
-  namespace: staging
+  name: image-automation
+  namespace: flux-system
 spec:
   interval: 1m
-  sourceRef:
+  sourceRef: 
     kind: GitRepository
-    name: repository-staging
+    name: flux-system
   git:
     checkout:
       ref:
@@ -16,7 +16,7 @@ spec:
       author:
         name: fluxcdbot
         email: fluxcdbot@users.noreply.github.com
-      messageTemplate: '[FluxCD Bot]: bump images staging'
+      messageTemplate: '[FluxCD Bot]: bump images'
     push:
       branch: main
   update:

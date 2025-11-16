@@ -6,6 +6,12 @@ resources:
   - prod-kustomization.yaml
   - staging-kustomization.yaml
   - image/automation-prod.yaml
-  - image/repository-prod.yaml
   - image/automation-staging.yaml
-  - image/repository-staging.yaml
+
+  # Metrics API LOG680
+  - image/metrics-policies.yaml
+  - image/metrics-repository.yaml
+
+  # Mobilitysoft LOG680
+  - image/mobilitysoft-policies.yaml
+  - image/mobilitysof-repository.yaml

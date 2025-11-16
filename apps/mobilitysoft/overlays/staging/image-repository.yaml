@@ -1,7 +1,0 @@
-apiVersion: image.toolkit.fluxcd.io/v1beta2
-kind: ImageRepository
-metadata:
-  name: mobilitysoft
-spec:
-  image: docker.io/funnyadd/mobilitysoft-eq10
-  interval: 1m
