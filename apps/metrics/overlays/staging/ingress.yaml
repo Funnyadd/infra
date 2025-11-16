@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: metrics
+  namespace: staging
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /$2
@@ -13,6 +14,17 @@ spec:
         paths:
           - path: /team10/metrics(/|$)(.*)
             pathType: ImplementationSpecific
+            backend:
+              service:
+                name: metrics
+                port:
+                  number: 5001
+                  spec:
+    - host: staging-log680.home.adammihajlovic.ca
+      http:
+        paths:
+          - path: /docs
+            pathType: Prefix
             backend:
               service:
                 name: metrics
