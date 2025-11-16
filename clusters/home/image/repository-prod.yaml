@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: infra-prod
+  name: repository-prod
   namespace: prod
 spec:
   interval: 1m
