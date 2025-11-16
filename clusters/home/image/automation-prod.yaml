@@ -2,7 +2,7 @@ apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageUpdateAutomation
 metadata:
   name: overlays-prod
-  namespace: flux-system
+  namespace: prod
 spec:
   interval: 1m
   sourceRef: 

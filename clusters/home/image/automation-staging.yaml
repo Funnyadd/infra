@@ -2,7 +2,7 @@ apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageUpdateAutomation
 metadata:
   name: overlays-staging
-  namespace: flux-system
+  namespace: staging
 spec:
   interval: 1m
   sourceRef:
