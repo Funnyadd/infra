@@ -2,14 +2,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mobilitysoft
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
-    - host: mobilitysoft.home.adammihajlovic.ca
+    - host: log680.home.adammihajlovic.ca
       http:
         paths:
-          - path: /
-            pathType: Prefix
+          - path: /team10/mobilitysoft(/|$)(.*)
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: mobilitysoft
