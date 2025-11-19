@@ -8,7 +8,7 @@ spec:
     spec:
       template:
         spec:
-          restartPolicy: Never
+          restartPolicy: OnFailure
           containers:
             - name: curl
               image: curlimages/curl:latest
