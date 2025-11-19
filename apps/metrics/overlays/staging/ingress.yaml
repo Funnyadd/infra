@@ -19,4 +19,3 @@ spec:
                 name: metrics
                 port:
                   number: 5001
-                  spec:
