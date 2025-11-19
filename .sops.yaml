@@ -1,4 +1,4 @@
 creation_rules:
-  - path_regex: apps/mobilitysoft/overlays/.*app-secrets\.yaml$
+  - path_regex: apps/.*/overlays/.*app-secrets\.yaml$
     encrypted_regex: '^(data|stringData)$'
     age: 'age1ng7svucv0gjna8xu8v53krpfm0ekpyxqph8lsf2l2gss2j4kaevs57jwxs'
