@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: metrics-snapshot-job
 spec:
-  schedule: "*/1 * * * *"   # every 5 minutes
+  schedule: "*/5 * * * *"   # every 5 minutes
   jobTemplate:
     spec:
       template:
