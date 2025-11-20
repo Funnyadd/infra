@@ -6,3 +6,6 @@ resources:
   - ../../base
   - ingress.yaml
 
+patches:
+  - path: patch-deployment.yaml
+
