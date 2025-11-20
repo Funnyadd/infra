@@ -19,3 +19,11 @@ spec:
                 name: mobilitysoft
                 port:
                   number: 5002
+                  
+          - path: /api(/|$)(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: mobilitysoft
+                port:
+                  number: 5002
