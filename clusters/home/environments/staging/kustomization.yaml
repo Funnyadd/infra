@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - ../../../../apps/metrics/overlays/staging
   - ../../../../apps/mobilitysoft/overlays/staging
+  - ../../../../apps/grafana/overlays/staging
