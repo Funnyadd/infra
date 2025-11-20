@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: log680.home.adammihajlovic.ca
+    - host: staging-log680.home.adammihajlovic.ca
       http:
         paths:
           - path: /team10/grafana(/|$)(.*)
