@@ -9,4 +9,4 @@ spec:
         - name: grafana
           env:
             - name: GF_SERVER_ROOT_URL
-              value: "grafana:3000"
+              value: "https://log680.home.adammihajlovic.ca/team10/grafana"
