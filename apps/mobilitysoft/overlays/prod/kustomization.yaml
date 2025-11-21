@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base
   - app-secrets.yaml
-  - ingress.yaml
+  - frontend-ingress.yaml
+  - backend-ingress.yaml
 patches:
   - path: patch-deployment.yaml
