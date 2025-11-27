@@ -15,4 +15,4 @@ spec:
               args:
                 - -X
                 - POST
-                - "http://metrics:5001/api/kanban/snapshot"
+                - "http://metrics:5001/api/kanban/snapshot?owner=log680-mtl-mobilitysoft&project_number=1"
