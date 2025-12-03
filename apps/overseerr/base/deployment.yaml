@@ -33,4 +33,4 @@ spec:
       volumes:
         - name: config
           persistentVolumeClaim:
-            claimName: overseerr-persistem-volume-claim
+            claimName: overseerr-persistent-volume-claim
