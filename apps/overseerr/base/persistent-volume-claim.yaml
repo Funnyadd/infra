@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: grafana-data
-  namespace: staging
+  name: overseerr-persistent-volume-claim
 spec:
   accessModes:
     - ReadWriteOnce
+  storageClassName: overseerr-manual
   resources:
     requests:
-      storage: 5Gi
-  storageClassName: local-path    # k3s default storage
+      storage: 10Gi

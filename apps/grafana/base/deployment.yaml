@@ -28,4 +28,4 @@ spec:
       volumes:                               
         - name: grafana-storage
           persistentVolumeClaim:
-            claimName: grafana-data
+            claimName: grafana-pvc

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: overseerr
+  labels:
+    app: overseerr
+spec:
+  type: ClusterIP
+  selector:
+    app: overseerr
+  ports:
+    - name: http
+      port: 5055
+      targetPort: http
+      protocol: TCP
