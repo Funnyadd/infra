@@ -10,7 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./apps-environments/namespaces
+  path: ./clusters/home/namespaces
   decryption:
     provider: sops
     secretRef:
