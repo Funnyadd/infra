@@ -5,6 +5,7 @@ namespace: prod
 resources:
   - ../../base
   - ingress.yaml
+  - persistent-volume-claim.yaml
 
 patches:
   - path: patch-deployment.yaml
