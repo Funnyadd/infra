@@ -10,7 +10,7 @@ spec:
   storageClassName: overseerr-manual
   persistentVolumeReclaimPolicy: Retain
   local:
-    path: /plexdata/overseerr-config
+    path: /persistentdata/overseerr-config
   nodeAffinity:
     required:
       nodeSelectorTerms:

@@ -10,7 +10,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   local:
-    path: /plexdata/grafana
+    path: /persistentdata/grafana
   nodeAffinity:
     required:
       nodeSelectorTerms:
