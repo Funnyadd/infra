@@ -1,13 +1,16 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
+  - flux-system
   - namespaces-kustomization.yaml
+  - prod-kustomization.yaml
+  - staging-kustomization.yaml
+  - image/automation.yaml
 
-  - ./image/automation-prod.yaml
-  - ./image/automation-staging.yaml
-  - ./image/imagerepos.yaml
-  - ./image/policies-prod.yaml
-  - ./image/policies-staging.yaml
+  # Metrics API LOG680
+  - image/metrics-policies.yaml
+  - image/metrics-repository.yaml
 
-  - ./staging-kustomization.yaml
-  - ./prod-kustomization.yaml
+  # Mobilitysoft LOG680
+  - image/mobilitysoft-policies.yaml
+  - image/mobilitysoft-repository.yaml

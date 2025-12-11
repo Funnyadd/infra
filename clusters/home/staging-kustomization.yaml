@@ -10,7 +10,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./apps-environments/staging
+  path: ./clusters/home/environments/staging
   targetNamespace: staging
   dependsOn:
     - name: namespaces
