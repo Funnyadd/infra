@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: staging
+  name: weave-gitops
   namespace: flux-system
 spec:
   interval: 1m
@@ -10,8 +10,8 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./clusters/home/environments/staging
-  targetNamespace: staging
+  path: ./clusters/home/environments/weave-gitops
+  targetNamespace: weave-gitops
   dependsOn:
     - name: namespaces
   decryption:

@@ -5,6 +5,7 @@ resources:
   - namespaces-kustomization.yaml
   - prod-kustomization.yaml
   - staging-kustomization.yaml
+  - weave-gitops-kustomization.yaml
   - image/automation.yaml
 
   # Metrics API LOG680
