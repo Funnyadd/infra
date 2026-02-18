@@ -15,3 +15,7 @@ resources:
   # Mobilitysoft LOG680
   - image/mobilitysoft-policies.yaml
   - image/mobilitysoft-repository.yaml
+
+  # Overseerr
+  - image/overseerr-repository.yaml
+  - image/overseerr-policies.yaml
