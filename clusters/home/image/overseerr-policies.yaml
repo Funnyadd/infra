@@ -6,6 +6,9 @@ metadata:
 spec:
   imageRepositoryRef:
     name: overseerr
+  filterTags:
+    pattern: '^(?P<ver>1\.\d+\.\d+)$'
+    extract: '$ver'
   policy:
     semver:
       range: "*"
