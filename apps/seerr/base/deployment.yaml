@@ -14,22 +14,32 @@ spec:
       labels:
         app: seerr
     spec:
+      securityContext:
+        fsGroup: 1000
+        fsGroupChangePolicy: OnRootMismatch
       containers:
         - name: seerr
-          image: ghcr.io/seerr-team/seerr:3.2.0 # {"$imagepolicy": "flux-system:seerr-prod"}
+          image: ghcr.io/seerr-team/seerr:v3.2.0 # {"$imagepolicy": "flux-system:seerr-prod"}
           ports:
             - containerPort: 5055
               name: http
           env:
-            - name: PUID
-              value: "1000"
-            - name: PGID
-              value: "1000"
             - name: TZ
               value: "America/Toronto"
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+            readOnlyRootFilesystem: false
+            runAsNonRoot: true
+            runAsUser: 1000
+            runAsGroup: 1000
+            seccompProfile:
+              type: RuntimeDefault
           volumeMounts:
             - name: config
-              mountPath: /config
+              mountPath: /app/config
       volumes:
         - name: config
           persistentVolumeClaim:

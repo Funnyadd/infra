@@ -7,8 +7,8 @@ spec:
   imageRepositoryRef:
     name: seerr
   filterTags:
-    pattern: '^(?P<ver>1\.\d+\.\d+)$'
+    pattern: '^v(?P<ver>3\.\d+\.\d+)$'
     extract: '$ver'
   policy:
     semver:
-      range: "*"
+      range: ">=3.0.0 <4.0.0"

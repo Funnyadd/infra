@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx 
   rules:
-    - host: seerr.home.adammihajlovic.ca
+    - host: overseerr.home.adammihajlovic.ca
       http:
         paths:
           - path: /
