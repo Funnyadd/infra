@@ -1,8 +1,8 @@
 apiVersion: image.toolkit.fluxcd.io/v1
 kind: ImageRepository
 metadata:
-  name: overseerr
+  name: seerr
   namespace: flux-system
 spec:
-  image: lscr.io/linuxserver/overseerr
+  image: lscr.io/linuxserver/seerr
   interval: 1h

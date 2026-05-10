@@ -1,11 +1,11 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta2
 kind: ImagePolicy
 metadata:
-  name: overseerr-prod
+  name: seerr-prod
   namespace: flux-system
 spec:
   imageRepositoryRef:
-    name: overseerr
+    name: seerr
   filterTags:
     pattern: '^(?P<ver>1\.\d+\.\d+)$'
     extract: '$ver'

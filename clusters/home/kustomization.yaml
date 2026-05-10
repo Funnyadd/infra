@@ -16,6 +16,6 @@ resources:
   - image/mobilitysoft-policies.yaml
   - image/mobilitysoft-repository.yaml
 
-  # Overseerr
-  - image/overseerr-repository.yaml
-  - image/overseerr-policies.yaml
+  # seerr
+  - image/seerr-repository.yaml
+  - image/seerr-policies.yaml
