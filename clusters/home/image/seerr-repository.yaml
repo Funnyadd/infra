@@ -4,5 +4,5 @@ metadata:
   name: seerr
   namespace: flux-system
 spec:
-  image: lscr.io/linuxserver/seerr
+  image: ghcr.io/seerr-team/seerr
   interval: 1h
